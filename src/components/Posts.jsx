@@ -1,10 +1,10 @@
 
 import { useState } from "react";
-import AuxBar from "@/components/Auxbar";
-import CreatePost from "@/components/CreatePost";
-import Header from "@/components/header";
-import PostCard from "@/components/PostCard";
-import PostModal from "@/components/PostModal";
+import AuxBar from "../components/Auxbar"
+import CreatePost from "../components/CreatePost";
+import Header from "../components/header";
+import PostCard from "../components/PostCard";
+import PostModal from "../components/PostModal";
 
 export default function Posts() {
     const [open, setOpen] = useState(false);

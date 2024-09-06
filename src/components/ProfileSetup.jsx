@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import Web3 from "web3";
 import { SwisstronikPlugin } from "@swisstronik/web3-plugin-swisstronik";
-import ABI from '@/scripts/userProfile/abi.mjs';
-import BYTECODE from '@/scripts/userProfile/bytecode.mjs';
-import { useRouter } from "next/navigation";
-import Link from 'next/link';
+import ABI from "../scripts/userProfile/abi.mjs"
+import BYTECODE from '../scripts/userProfile/bytecode.mjs';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Header from './header';
 import { IoClose } from "react-icons/io5";
 
@@ -18,7 +18,7 @@ export default function CreateProfile() {
     const [userProfile, setUserProfile] = useState(null);
     const [walletAddress, setWalletAddress] = useState(null);
 
-    const router = useRouter();
+    const navigate = useNavigate();
 
     useEffect(() => {
         // Retrieve the wallet address from local storage when the page loads
@@ -51,7 +51,7 @@ export default function CreateProfile() {
             console.log("Profile created:", createProfileTx);
 
             // Redirect to dashboard after profile creation
-            router.push('/dashboard'); // Assuming your dashboard route is /dashboard
+            navigate('/dashboard'); // Assuming your dashboard route is /dashboard
         } catch (error) {
             console.error("Error creating profile:", error);
         }
@@ -90,7 +90,7 @@ export default function CreateProfile() {
                     <div className="border-b border-[#344054] flex flex-row justify-center items-center h-[80px] mb-4">
                         {/* <p>Account: {walletAddress}</p> */}
                         <p className="text-2xl font-bold text-white"> Create your profile</p>
-                        <Link href={"/"}><IoClose className="text-white font-medium ml-8 text-xl" /></Link>
+                        <Link to="/"><IoClose className="text-white font-medium ml-8 text-xl" /></Link>
                     </div>
 
                     <div>

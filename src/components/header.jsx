@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import Image from 'next/image'
 import Web3 from 'web3';
 import { useNavigate } from 'react-router-dom';
 
@@ -55,11 +54,9 @@ const Header = () => {
         <button onClick={requestAccount}
             className='flex flex-row justify-between items-center h-[52px] bg-slate-500/50 py-2 px-4 rounded-xl text-white font-medium text-lg'
         >
-           <Image 
+           <img
             src="/assets/Images/metamask.png" 
             className="mr-2"
-            width="24" 
-            height="24"
             alt=''
            /> 
            Connect Metamask
